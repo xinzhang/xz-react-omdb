@@ -10,4 +10,10 @@ describe('test omdbapi with mocks', () => {
     expect(result.data.Title).toBe('Gun');
     expect(result.data.imdbID).toBe(imdbId);
   });
+
+  test('should omdbAPI return by search', async () => {
+    const result = await omdbApi.searchMovies('spider');
+    expect(result.data.totalResults).toBeGreaterThan(0);
+    expect(result.data.Search[0].Title).toBe('Gun');
+  });
 });

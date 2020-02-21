@@ -3,3 +3,7 @@ GET https://www.omdbapi.com/?apikey={{$dotenv REACT_APP_OMDB_API_KEY}}&t=gun&plo
 ###
 
 GET http://www.omdbapi.com/?apikey={{$dotenv REACT_APP_OMDB_API_KEY}}&i=tt1560954&plot=full
+
+###
+
+GET http://www.omdbapi.com/?apikey={{$dotenv REACT_APP_OMDB_API_KEY}}&plot=full&s=spider

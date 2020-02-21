@@ -12,3 +12,14 @@ export function getMovieById(imdbId) {
   console.log('mocks getMovieById');
   return { data: movie };
 }
+
+export function searchMovies(keyword) {
+  console.log('mocks search');
+  return {
+    data: {
+      Search: [movie],
+      totalResults: 10,
+      Response: true,
+    },
+  };
+}
