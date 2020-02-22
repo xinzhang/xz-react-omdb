@@ -7,3 +7,7 @@ GET http://www.omdbapi.com/?apikey={{$dotenv REACT_APP_OMDB_API_KEY}}&i=tt156095
 ###
 
 GET http://www.omdbapi.com/?apikey={{$dotenv REACT_APP_OMDB_API_KEY}}&plot=full&s=spider
+
+GET http://www.omdbapi.com/?apikey={{$dotenv REACT_APP_OMDB_API_KEY}}&plot=full&s=batman&p=3
+
+http://www.omdbapi.com/?apikey=946c240a&plot=full&s=batman&page=3

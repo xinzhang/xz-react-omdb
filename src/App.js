@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import MovieCard from 'components/MovieCard';
 import Search from 'components/Search';
 
 const { REACT_APP_PRODUCT_NAME } = process.env;
@@ -13,7 +12,6 @@ function App() {
       </header>
       <section>
         <Search />
-        <MovieCard movie={{ imdbID: 'test' }} />
       </section>
     </div>
   );
