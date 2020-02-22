@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FieldItem /> Component it should match the FieldItem with value 1`] = `
+<div
+  className="sc-AxjAm bTkFZh"
+>
+  <b>
+    name
+  </b>
+  : 
+  value
+</div>
+`;
+
+exports[`<FieldItem /> Component it should match the FieldItem without value 1`] = `null`;

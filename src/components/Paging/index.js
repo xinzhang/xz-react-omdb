@@ -29,7 +29,11 @@ const Paging = React.memo(({ totalResults, currentPage, onClick }) => {
   return (
     <StyledWrapper>
       {currentPage > 1 && (
-        <StyledPager icon={faCaretLeft} onClick={() => onClick(currentPage - 1)} />
+        <StyledPager
+          data-testid="prev"
+          icon={faCaretLeft}
+          onClick={() => onClick(currentPage - 1)}
+        />
       )}
       <StyledContent>
         Page {currentPage}
@@ -37,7 +41,11 @@ const Paging = React.memo(({ totalResults, currentPage, onClick }) => {
         {totalResults} results
       </StyledContent>
       {currentPage < totalPage && (
-        <StyledPager icon={faCaretRight} onClick={() => onClick(currentPage + 1)} />
+        <StyledPager
+          data-testid="next"
+          icon={faCaretRight}
+          onClick={() => onClick(currentPage + 1)}
+        />
       )}
     </StyledWrapper>
   );
