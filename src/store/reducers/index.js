@@ -1,4 +1,8 @@
-import movie from './movie';
+
+
+
 export default {
-  movie,
+  currentMovie
+  imdbId,
+  
 };
