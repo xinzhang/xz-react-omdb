@@ -19,6 +19,10 @@ Builds the app for production to the `build` folder.
 Test the application. The testing is a mixture of API mocking, Jest snapshot and adoption of the \
 latest react-test-libraryto test the hooks component and dom.
 
+## Live address in AWS s3
+
+[https://xz-s3-omdb.s3-ap-southeast-2.amazonaws.com/index.html](Demo)
+
 ## Screen shots
 
 ![Alt text](/screenshots/default_screen.png 'Default desktop screen')
@@ -35,7 +39,7 @@ latest react-test-libraryto test the hooks component and dom.
 - Use styled-components to make it easier for component styling
 - Use dotenv to load settings to environment. ( API key is saved as CI varialbe so it won't be exposed in Repo)
 - Further to do
-  - can useContext hooks
-  - or can add redux to show movie detail
-  - add CI/CD to publish to AWS S3 and router53 to publish as CDN
+  - can useContext hooks (feature branch)
+  - or can add redux to show movie detail (feature branch)
+  - add circle CI/CD to publish to AWS S3 (done) (feature branch)
   -
