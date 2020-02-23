@@ -21,7 +21,7 @@ latest react-test-libraryto test the hooks component and dom.
 
 ## Live address in AWS s3
 
-[https://xz-s3-omdb.s3-ap-southeast-2.amazonaws.com/index.html](Demo)
+[Demo](https://xz-s3-omdb.s3-ap-southeast-2.amazonaws.com/index.html
 
 ## Screen shots
 
