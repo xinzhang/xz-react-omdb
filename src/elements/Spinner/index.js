@@ -9,6 +9,6 @@ const StyledFa = styled(FontAwesomeIcon)`
   font-size: 20px;
 `;
 
-const Spinner = () => <StyledFa icon={faSpinner} />;
+const Spinner = () => <StyledFa icon={faSpinner} data-testid="spinner" />;
 
 export default Spinner;

@@ -50,7 +50,7 @@ const MovieDetail = ({ imdbID }) => {
     };
     fetchData();
   }, [imdbID]);
-  console.log(data);
+
   return (
     <StyledMovieDetailWrapper>
       {isLoading || !data ? (

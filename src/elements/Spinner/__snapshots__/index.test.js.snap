@@ -6,6 +6,7 @@ exports[`<FieldItem /> Component it should match the FieldItem with value 1`] = 
   className="svg-inline--fa fa-spinner fa-w-16 sc-AxjAm chlBnJ"
   data-icon="spinner"
   data-prefix="fas"
+  data-testid="spinner"
   focusable="false"
   role="img"
   style={Object {}}
