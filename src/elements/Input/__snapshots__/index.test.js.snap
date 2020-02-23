@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FieldItem /> Component it should match the FieldItem with value 1`] = `
+<input
+  className="sc-AxjAm cUzdnk"
+  onChange={[Function]}
+  placeholder="abc"
+  value="test"
+/>
+`;

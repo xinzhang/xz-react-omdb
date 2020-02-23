@@ -24,7 +24,7 @@ const StyledContent = styled.div`
 `;
 
 const Paging = React.memo(({ totalResults, currentPage, onClick }) => {
-  const totalPage = Math.floor(totalResults / PageSize);
+  const totalPage = Math.ceil(totalResults / PageSize);
 
   return (
     <StyledWrapper>

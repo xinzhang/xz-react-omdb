@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { getMovieById } from 'api/omdbApi';
-import Spinner from 'components/Spinner';
-import FieldItem from 'components/FieldItem';
+import Spinner from 'elements/Spinner';
+import FieldItem from 'elements/FieldItem';
 
 const StyledMovieDetailWrapper = styled.div`
   width: 68vw;

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { searchMovies } from 'api/omdbApi';
 import MovieCard from 'components/MovieCard';
-import Spinner from 'components/Spinner';
+import Spinner from 'elements/Spinner';
 import Paging from 'components/Paging';
-import Input from 'components/Input';
+import Input from 'elements/Input';
 
 const StyledWrapper = styled.div`
   min-width: 340px;
