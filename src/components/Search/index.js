@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { searchMovies } from 'api/omdbApi';
+import { fetchMovieById } from 'store/actions';
 import MovieCard from 'components/MovieCard';
 import Spinner from 'elements/Spinner';
 import Paging from 'components/Paging';
@@ -17,11 +19,12 @@ const StyledSearch = styled.div`
   flex: 1;
 `;
 
-function Search({ onClick, imdbID }) {
+export function Search({ imdbID }) {
   const [data, setData] = useState({ Search: [] });
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState('spider man');
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,7 +62,7 @@ function Search({ onClick, imdbID }) {
                 key={item.imdbID}
                 movie={item}
                 selected={imdbID === item.imdbID}
-                onClick={() => onClick(item)}
+                onClick={() => dispatch(fetchMovieById(item.imdbID))}
               />
             ))}
           {data.totalResults > 10 && (
@@ -75,4 +78,12 @@ function Search({ onClick, imdbID }) {
   );
 }
 
-export default Search;
+Search.defaultProps = {
+  imdbID: -1,
+};
+
+const mapStateToProps = ({ movie }) => ({
+  imdbID: movie.imdbID,
+});
+
+export default connect(mapStateToProps)(Search);

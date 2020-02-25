@@ -1,20 +1,20 @@
-## XZ React OMDB Demo App
+# XZ React OMDB Demo App
 
-### `set up API key`
+## `set up API key`
 
 Need to set up the API key in your local .env file
 Please refer to .env.sample as an example.
 
-### `npm start`
+## `npm start`
 
 Runs the app in the development mode. \
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run build`
+## `npm run build`
 
 Builds the app for production to the `build` folder.
 
-### `npm run test`
+## `npm run test`
 
 Test the application. The testing is a mixture of API mocking, Jest snapshot and adoption of the \
 latest react-test-libraryto test the hooks component and dom.
@@ -42,4 +42,3 @@ latest react-test-libraryto test the hooks component and dom.
   - can useContext hooks (feature branch)
   - or can add redux to show movie detail (feature branch)
   - add circle CI/CD to publish to AWS S3 (done) (feature branch)
-  -

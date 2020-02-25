@@ -1,14 +1,17 @@
 import React from 'react';
-import { render, wait } from '@testing-library/react';
-import MovieDetail from '.';
+import { render } from '@testing-library/react';
+import { MovieDetail } from '.';
 
-jest.mock('api/omdbApi');
+const movieData = {
+  Title: 'Gun',
+  imdbID: 'tt1560954',
+  Language: 'English',
+};
 
 describe('<MovieDetail /> Component', () => {
   test('it should return the MovieDetail', async () => {
-    const { getByText, queryByTestId } = render(<MovieDetail imdbID="tt1560954" />);
-    expect(queryByTestId('spinner')).toBeTruthy();
-    await wait(() => expect(getByText('Gun')).toBeInTheDocument());
+    const { getByText } = render(<MovieDetail movie={movieData} />);
+    expect(getByText('Gun')).toBeInTheDocument();
     expect(getByText('Language')).toBeInTheDocument();
   });
 });

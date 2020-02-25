@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { getMovieById } from 'api/omdbApi';
+import { connect } from 'react-redux';
 import Spinner from 'elements/Spinner';
 import FieldItem from 'elements/FieldItem';
 
@@ -35,39 +35,24 @@ const StyledPlot = styled.div`
   padding: 8px 0px;
 `;
 
-const MovieDetail = ({ imdbID }) => {
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const result = await getMovieById(imdbID);
-        setData(result.data);
-      } catch (e) {}
-      setIsLoading(false);
-    };
-    fetchData();
-  }, [imdbID]);
-
+export const MovieDetail = ({ movie }) => {
   return (
     <StyledMovieDetailWrapper>
-      {isLoading || !data ? (
+      {!movie ? (
         <Spinner />
       ) : (
         <>
           <div className="movieIntro">
-            <StyledMovieTitle>{data.Title}</StyledMovieTitle>
-            <StyledGenre>{data.Genre}</StyledGenre>
-            <StyledPlot>{data.Plot}</StyledPlot>
-            <FieldItem field="Language" text={data.Language} />
-            <FieldItem field="Director" text={data.Director} />
-            <FieldItem field="Actors" text={data.Actors} />
-            <FieldItem field="Duration" text={data.Runtime} />
+            <StyledMovieTitle>{movie.Title}</StyledMovieTitle>
+            <StyledGenre>{movie.Genre}</StyledGenre>
+            <StyledPlot>{movie.Plot}</StyledPlot>
+            <FieldItem field="Language" text={movie.Language} />
+            <FieldItem field="Director" text={movie.Director} />
+            <FieldItem field="Actors" text={movie.Actors} />
+            <FieldItem field="Duration" text={movie.Runtime} />
           </div>
           <StyledPoster>
-            <img src={data.Poster} alt={data.Title} />
+            <img src={movie.Poster} alt={movie.Title} />
           </StyledPoster>
         </>
       )}
@@ -75,4 +60,8 @@ const MovieDetail = ({ imdbID }) => {
   );
 };
 
-export default MovieDetail;
+const mapStateToProps = ({ movie }) => ({
+  movie,
+});
+
+export default connect(mapStateToProps)(MovieDetail);

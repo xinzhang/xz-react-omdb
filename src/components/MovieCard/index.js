@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { StyledCard, StyledTitle, StyledFavor, StyledFontSize } from './styled';
@@ -33,4 +34,9 @@ MovieCard.prototype = {
 MovieCard.defaultProps = {
   selected: false,
 };
-export default MovieCard;
+
+const mapStateToProps = ({ movie }, ownProps) => ({
+  selected: ownProps.movie.imdbID === movie.imdbID,
+});
+
+export default connect(mapStateToProps)(MovieCard);
